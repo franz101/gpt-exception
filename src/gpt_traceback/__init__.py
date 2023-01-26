@@ -1,4 +1,4 @@
-__version__ = "0.1.15"
+__version__ = "0.1.16"
 
 import warnings
 from getpass import getpass
@@ -22,3 +22,6 @@ except ImportError:
 def deactivate():
     IPython.get_ipython().set_custom_exc((Exception,),
                                      None)
+
+def change_model(model="code-davinci-002"):
+    os.environ["OPENAI_MODEL"] = model
