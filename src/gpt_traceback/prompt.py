@@ -1,12 +1,15 @@
 import requests
 import os
 import json
+from getpass import getpass
 
 def predict_prompt(prompt):
   apiKey = os.environ.get("OPENAI_API_KEY")
   if apiKey is None:
-    print("Api Key is missing. Head over to:\nhttps://beta.openai.com/account/api-keys")
-    apiKey = input("Please enter OPENAI API KEY:")
+    print("""Api Key is missing. Head over to:
+https://beta.openai.com/account/api-keys
+Please enter OPENAI API KEY:""")
+    apiKey = input()
     apiKey = apiKey.strip()
     assert "sk-" in apiKey, "API Key needs to start with sk-..."
     os.environ["OPENAI_API_KEY"] = apiKey
