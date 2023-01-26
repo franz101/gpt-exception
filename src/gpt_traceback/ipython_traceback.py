@@ -25,7 +25,8 @@ def exception_hook(exc_type, exc_value, exc_traceback):
 def custom_exc(shell, etype, evalue, tb, tb_offset=None):
   return exception_hook(etype, evalue, tb)
   
-
-
-IPython.get_ipython().set_custom_exc((Exception,),
+def init_exception_hook():
+  IPython.get_ipython().set_custom_exc((Exception,),
                                      custom_exc)
+
+init_exception_hook()

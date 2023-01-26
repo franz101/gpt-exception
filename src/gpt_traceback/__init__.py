@@ -19,6 +19,14 @@ Please enter OPENAI API KEY:""")
 except ImportError:
     warnings.warn("IPython could not be imported, are you in Google Colab?")
 
+def init():
+    try:
+        from .ipython_traceback import *
+        init_exception_hook()
+    except ImportError:
+        warnings.warn("IPython could not be imported, are you in Google Colab?")
+
+
 def deactivate():
     IPython.get_ipython().set_custom_exc((Exception,),
                                      None)
