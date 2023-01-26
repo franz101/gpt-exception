@@ -4,19 +4,19 @@ with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='example_pypi_package',
-    author='Tom Chen',
-    author_email='tomchen.org@gmail.com',
-    description='Example PyPI (Python Package Index) Package',
-    keywords='example, pypi, package',
+    name='gpt_traceback',
+    author='Franz Krekeler',
+    author_email='bff@🦆.com',
+    description='Debug your exceptions with GPT',
+    keywords='gpt, jupyter, colab, traceback, debugging',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/tomchen/example_pypi_package',
+    url='https://github.com/franz101/gpt-exception',
     project_urls={
-        'Documentation': 'https://github.com/tomchen/example_pypi_package',
+        'Documentation': 'https://github.com/franz101/gpt-exception',
         'Bug Reports':
-        'https://github.com/tomchen/example_pypi_package/issues',
-        'Source Code': 'https://github.com/tomchen/example_pypi_package',
+        'https://github.com/franz101/gpt-exception/issues',
+        'Source Code': 'https://github.com/franz101/gpt-exception',
         # 'Funding': '',
         # 'Say Thanks!': '',
     },

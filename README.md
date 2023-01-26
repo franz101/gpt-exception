@@ -1,34 +1,19 @@
 # Example PyPI (Python Package Index) Package & Tutorial / Instruction / Workflow for 2021
 
-[![PyPI package](https://img.shields.io/badge/pip%20install-example--pypi--package-brightgreen)](https://pypi.org/project/example-pypi-package/) [![version number](https://img.shields.io/pypi/v/example-pypi-package?color=green&label=version)](https://github.com/tomchen/example_pypi_package/releases) [![Actions Status](https://github.com/tomchen/example_pypi_package/workflows/Test/badge.svg)](https://github.com/tomchen/example_pypi_package/actions) [![License](https://img.shields.io/github/license/tomchen/example_pypi_package)](https://github.com/tomchen/example_pypi_package/blob/main/LICENSE)
+[![PyPI package](https://img.shields.io/badge/pip%20install-gpt--traceback-brightgreen)](https://pypi.org/project/gpt-traceback/) [![version number](https://img.shields.io/pypi/v/example-pypi-package?color=green&label=version)](https://github.com/franz101/gpt-exception/releases) [![Actions Status](https://github.com/franz101/gpt-exception/workflows/Test/badge.svg)](https://github.com/franz101/gpt-exception/actions) [![License](https://img.shields.io/github/license/franz101/gpt-exception)](https://github.com/franz101/gpt-exception/blob/main/LICENSE)
 
-This is an example [PyPI](https://pypi.org/) (Python Package Index) package set up with automated tests and package publishing workflow using GitHub Actions CI/CD. It is made primarily for GitHub + VS Code (Windows / Mac / Linux) users who are about to write and publish their first PyPI package. The package could serve as a starter / boilerplate / demo and the tutorial could give you a quick and concise explaination to solve some small but annoying problems you might encounter, such as package / module name confusion, and VS Code test configuration issues.
+Debug your Jupyter error with GPT
 
-<details><summary><strong>Differences from pypa/sampleproject (click to show/hide)</strong></summary>
-
-This example package is inspired by / based on the [official sample project pypa/sampleproject](https://github.com/pypa/sampleproject), but this package:
-
-- is a simplified version of pypa/sampleproject (and the [official Python Packaging User Guide](https://packaging.python.org/))
-- uses GitHub Actions for both testing and publishing, instead of Travis CI
-- is tested when pushing `master` or `main` branch, and is published when create a release
-- includes test files in the source distribution
-- uses **setup.cfg** for [version single-sourcing](https://packaging.python.org/guides/single-sourcing-package-version/) (setuptools 46.4.0+)
-- has **.vscode\settings.json** and **vscode.env** which adds **src/** folder to `PYTHONPATH`, so that test files don't have linting errors and may run with pytest in VS Code
-- does not use flake8 for automated linting - it is sometimes too strict and inflexible, you may use pylint locally instead
-- has this tutorial that covers everything you need to know in one page. Everything that might not be very useful, is hidden in collapsible sections that you can click to show
-- has **[.editorconfig](https://editorconfig.org/#download)** file
+<details><summary><strong>How to use it (click to show/hide)</strong></summary>
+import gpt_traceback
 
 </details>
 
-## Make necessary changes
+## How does it work
 
-### Use as a template
+### Debug your assertion
 
-[![Use the template](https://img.shields.io/static/v1?label=&message=Click%20here%20to%20use%20this%20package%20as%20a%20template%20to%20start%20a%20new%20repo%20on%20GitHub&color=brightgreen&style=for-the-badge)](https://github.com/tomchen/example_pypi_package/generate)
 
-(Click the above button to use this example package as a template for your new GitHub repo, this will initialize a new repository and my commits will not be in your git history)
-
-(If you do not use GitHub, you can [download the archive of the example package](https://github.com/tomchen/example_pypi_package/archive/main.zip))
 
 ### Package, module name
 
