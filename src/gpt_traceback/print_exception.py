@@ -19,7 +19,7 @@ def print_exception(exc_type, exc_value, exc_traceback):
     traceback_exception = Traceback.from_exception(
                 exc_type,
                 exc_value,
-                exc_traceback,
+                ltb,
                 width = 100,
     extra_lines = 3,
     theme= None,

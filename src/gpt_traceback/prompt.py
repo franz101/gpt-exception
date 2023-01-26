@@ -30,6 +30,9 @@ Please enter OPENAI API KEY:""")
   }
 
   response = requests.post(url, headers=headers, data=json.dumps(payload))
-
   response_json = response.json()
-  return response_json['choices'][0]['text']
+  try:
+    return response_json['choices'][0]['text']
+  except KeyError:
+    print(response_json)
+    raise KeyError
