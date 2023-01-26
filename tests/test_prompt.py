@@ -1,13 +1,11 @@
 import unittest
 
-from gpt_traceback.prompt import predict_prompt
-
 
 class TestSimple(unittest.TestCase):
 
     def test_example(self):
 
-        self.assertEqual(True, True)
+        self.assertEqual((Number(5) + Number(6)).value, 11)
 
 
 if __name__ == '__main__':
