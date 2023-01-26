@@ -12,11 +12,11 @@ def exception_hook(exc_type, exc_value, exc_traceback):
     source = inspect.getsource(last_tb.tb_frame)
     print_exception(exc_type, exc_value, last_tb)
     error = "##### Fix exception from the code below\n"
+    error += source + "\n"
     exception = "\n".join(traceback.format_exception_only(exc_type, exc_value))
-    error += "\"\"\"Exception type and exception value:\n" + exception + "\n"
+    error += "\"\"\"Caused this exception type and exception value: " + exception + "\n"
     traceback_str ="\n".join(traceback.format_tb(exc_traceback, 2))
-    error += "Traceback (2):\n" + traceback_str + "\n"
-    error += "Code:\n" + source + "\"\"\"\n### Fixed Python"
+    error += "With the follwoing traceback:" + traceback_str + "\"\"\"\n### Fixed Python\n"
     print("Loading answer:")
     print("...")
     formatted_string = textwrap.wrap(predict_prompt(error), width=60)
