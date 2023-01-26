@@ -14,7 +14,10 @@ Please enter OPENAI API KEY:""")
     apiKey = apiKey.strip()
     assert "sk-" in apiKey, "API Key needs to start with sk-..."
     os.environ["OPENAI_API_KEY"] = apiKey
-  model = os.environ.get("OPENAI_MODEL",'text-davinci-003')
+  model = os.environ.get("OPENAI_MODEL",None)
+  if not model:
+    model = 'text-davinci-003'
+    os.environ["OPENAI_MODEL"] = model
   temperature = 0.
   maxTokens = 150
 
@@ -36,6 +39,6 @@ Please enter OPENAI API KEY:""")
     return response_json['choices'][0]['text']
   except KeyError:
     print(response_json)
-    warnings.warn(str(response_json))
+    # warnings.warn(str(response_json))
   except Exception as e:
     return f"Error {str(e)}"
