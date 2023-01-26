@@ -35,4 +35,7 @@ Please enter OPENAI API KEY:""")
   try:
     return response_json['choices'][0]['text']
   except KeyError:
-    warnings.warn(response_json)
+    print(response_json)
+    warnings.warn(str(response_json))
+  except Exception as e:
+    return f"Error {str(e)}"

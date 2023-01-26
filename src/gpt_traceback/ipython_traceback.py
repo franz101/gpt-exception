@@ -16,7 +16,7 @@ def exception_hook(exc_type, exc_value, exc_traceback):
     error += "Exception type and exception value:\n" + exception + "\n"
     traceback_str ="\n".join(traceback.format_tb(exc_traceback, 2))
     error += "Traceback (2):\n" + traceback_str + "\n"
-    error += "Source of cell:\n" + source + "\nThe solution to the exception is:"
+    error += "Source of cell:\n" + source + "\n\nThe solution to the problem is:"
     print("Loading answer:")
     print("...")
     formatted_string = textwrap.wrap(predict_prompt(error), width=60)
