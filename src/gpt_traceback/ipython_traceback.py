@@ -1,9 +1,12 @@
 import IPython, inspect
-import textwrap
 from IPython.core import ultratb
 import traceback
 from .prompt import predict_prompt
 from .print_exception import print_exception
+from pygments import highlight
+from pygments.lexers import PythonLexer
+from pygments.formatters import TerminalFormatter
+
 
 def exception_hook(exc_type, exc_value, exc_traceback):
     last_tb = exc_traceback
@@ -19,8 +22,8 @@ def exception_hook(exc_type, exc_value, exc_traceback):
     error += "With the follwoing traceback:" + traceback_str + "\"\"\"\n### Fixed Python\n"
     print("Loading answer:")
     print("...")
-    formatted_string = textwrap.wrap(predict_prompt(error), width=60)
-    print("\n".join(formatted_string))
+    code = predict_prompt(error)
+    print(highlight(code, PythonLexer(), TerminalFormatter()))
     
 def custom_exc(shell, etype, evalue, tb, tb_offset=None):
   return exception_hook(etype, evalue, tb)
