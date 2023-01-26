@@ -4,7 +4,7 @@ from rich.console import Console
 console = Console()
 
 def print_exception(exc_type, exc_value, exc_traceback):
-    tb_offset = 0
+    tb_offset = 1
     ltb = exc_traceback
     for _ in range(tb_offset):
         if ltb is None:

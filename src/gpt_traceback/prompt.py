@@ -1,5 +1,6 @@
 import requests
 import os
+import json
 
 def predict_prompt(prompt):
   apiKey = os.environ.get("OPENAI_API_KEY")
@@ -27,5 +28,5 @@ def predict_prompt(prompt):
 
   response = requests.post(url, headers=headers, data=json.dumps(payload))
 
-  response_json = json.loads(response.text)
+  response_json = response.json()
   return response_json['choices'][0]['text']
