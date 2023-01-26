@@ -5,7 +5,7 @@ console = Console()
 
 def print_exception(exc_type, exc_value, exc_traceback):
     tb_offset = 0
-    ltb = tb
+    ltb = exc_traceback
     for _ in range(tb_offset):
         if ltb is None:
             break

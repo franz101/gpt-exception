@@ -2,7 +2,13 @@ import requests
 import os
 
 def predict_prompt(prompt):
-  apiKey = os.environ["OPENAI_API_KEY"]
+  apiKey = os.environ.get("OPENAI_API_KEY")
+  if apiKey is None:
+    print("Api Key is missing. Head over to:\nhttps://beta.openai.com/account/api-keys")
+    apiKey = input("Please enter OPENAI API KEY:")
+    apiKey = apiKey.strip()
+    assert "sk-" in apiKey, "API Key needs to start with sk-..."
+    os.environ["OPENAI_API_KEY"] = apiKey
   model = 'text-davinci-003'
   temperature = 0.
   maxTokens = 150
