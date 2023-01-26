@@ -2,6 +2,7 @@ import requests
 import os
 import json
 from getpass import getpass
+import warnings
 
 def predict_prompt(prompt):
   apiKey = os.environ.get("OPENAI_API_KEY")
@@ -34,4 +35,4 @@ Please enter OPENAI API KEY:""")
   try:
     return response_json['choices'][0]['text']
   except KeyError:
-    print(response_json)
+    warnings.warn(response_json)

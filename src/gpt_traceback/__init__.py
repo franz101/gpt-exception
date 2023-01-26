@@ -1,4 +1,4 @@
-__version__ = "0.1.16"
+__version__ = "0.1.17"
 
 import warnings
 from getpass import getpass
@@ -21,7 +21,7 @@ except ImportError:
 
 def init():
     try:
-        from .ipython_traceback import *
+        from .ipython_traceback import init_exception_hook
         init_exception_hook()
     except ImportError:
         warnings.warn("IPython could not be imported, are you in Google Colab?")
