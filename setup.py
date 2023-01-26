@@ -6,7 +6,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 setuptools.setup(
     name='gpt_traceback',
     author='Franz Krekeler',
-    author_email='bff@🦆.com',
+    author_email='filmfranz@findmeontwitter.com',
     description='Debug your exceptions with GPT',
     keywords='gpt, jupyter, colab, traceback, debugging',
     long_description=long_description,
